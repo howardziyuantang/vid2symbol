@@ -13,10 +13,12 @@ with gr.Blocks() as app:
         vid_in = gr.Video(label='Original video')
         vid_out = gr.Video(label='Converted video')
         
-    with gr.Row():
-        gs_btn = gr.Button('Convert to grayscale')
-        download_btn = gr.Button('Download video')
+    gs_btn = gr.Button('Convert to grayscale')
+    
+    vid2symbol_btn = gr.Button('Convert to symbols')
+    symbol_vid = gr.Video(label='Symbolized video')
         
     gs_btn.click(fn=cvt.to_grayscale, inputs=[vid_in], outputs=vid_out)
+    vid2symbol_btn.click(fn=cvt.to_symbols, inputs=[vid_out], outputs=symbol_vid)
 
 app.launch()
