@@ -13,14 +13,14 @@ gs_presets = np.array([[.114, .587, .299], [.0722, .7152, .2126]])
 char_list = ["#*:. "[::-1], " .:-=+*#%@", "@#S08Xx+=-;:,._ "[::-1], 
 "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,\"^`'. "[::-1], " 一二卜人个十大天米金我家样糖繁壁齉"]
 
-def to_symbols(in_vid, gs_radio, char_radio, symbol_scale):
+def to_symbols(in_vid, gs_radio, char_radio, symbol_scale, resize):
     
     global symbol_size, cell_width, cell_height
     symbol_size = symbol_scale
     cell_width = int(base_width * symbol_size)
     cell_height = int(base_height * symbol_size)
     
-    orig_resized = cv2.VideoCapture(resize_vid(in_vid, "orig"))
+    orig_resized = cv2.VideoCapture((resize_vid(in_vid, "orig") if not resize else in_vid))
     
     frame_width = int(orig_resized.get(cv2.CAP_PROP_FRAME_WIDTH))
     frame_height = int(orig_resized.get(cv2.CAP_PROP_FRAME_HEIGHT))

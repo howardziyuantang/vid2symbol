@@ -15,12 +15,17 @@ with gr.Blocks() as app:
     
     with gr.Row():
         with gr.Column(scale=1):
-            gs_radio = gr.Radio(
-                choices=["Luma", "Perceived Luminance"],
-                value="Luma",
-                label="Grayscale conversion function:",
-                type="index",
-            )
+            with gr.Row():
+                gs_radio = gr.Radio(
+                    choices=["Luma", "Perceived Luminance"],
+                    value="Luma",
+                    label="Grayscale conversion function:",
+                    type="index",
+                )
+                resize = gr.Checkbox(
+                    value=False,
+                    label="Preserve input resolution",
+                )
             symbol_size = gr.Slider(
                 minimum=1,
                 maximum=10,
@@ -39,6 +44,6 @@ with gr.Blocks() as app:
     
     convert_btn = gr.Button('Convert to symbols!')
             
-    convert_btn.click(fn=cvt.to_symbols, inputs=[vid_in, gs_radio, char_radio, symbol_size], outputs=vid_out)
+    convert_btn.click(fn=cvt.to_symbols, inputs=[vid_in, gs_radio, char_radio, symbol_size, resize], outputs=vid_out)
 
-app.launch()
+app.launch(share=True)
