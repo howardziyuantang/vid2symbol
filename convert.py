@@ -107,7 +107,7 @@ def resize_vid(in_vid, name):
 def create_char_lut(char_set):
 
     font = cv2.FONT_HERSHEY_PLAIN
-    font_scale = 0.3*symbol_size
+    font_scale = 0.25*symbol_size
     thickness = 2
 
     lut = np.zeros(

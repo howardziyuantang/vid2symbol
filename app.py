@@ -47,3 +47,4 @@ with gr.Blocks() as app:
     convert_btn.click(fn=cvt.to_symbols, inputs=[vid_in, gs_radio, char_radio, symbol_size, resize], outputs=vid_out)
 
 app.launch(share=True)
+
