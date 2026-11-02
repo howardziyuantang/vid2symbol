@@ -5,8 +5,10 @@ with gr.Blocks() as app:
     
     gr.Markdown(
         """
+        #
         # Vid2Symbol
         ## Convert any MP4 video into a colorful animation of symbols!
+        #
         """)
     
     with gr.Row():
@@ -25,6 +27,8 @@ with gr.Blocks() as app:
                 resize = gr.Checkbox(
                     value=False,
                     label="Preserve input resolution",
+                    info="If checked, input video will NOT be downsized first. \n"
+                    "WARNING: large output file! Set symbol size to 1"
                 )
             symbol_size = gr.Slider(
                 minimum=1,
@@ -46,5 +50,5 @@ with gr.Blocks() as app:
             
     convert_btn.click(fn=cvt.to_symbols, inputs=[vid_in, gs_radio, char_radio, symbol_size, resize], outputs=vid_out)
 
-app.launch(share=True)
+app.launch()
 

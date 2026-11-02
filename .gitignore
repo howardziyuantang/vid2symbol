@@ -1,7 +1,10 @@
 .venv/
-.env
+.gradio/
+
 __pycache__/
+
 inputs/
 outputs/
-.gradio/
-"WOWOWOW SO GOOD/"
+best outputs/
+
+

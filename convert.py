@@ -61,7 +61,7 @@ def to_symbols(in_vid, gs_radio, char_radio, symbol_scale, resize):
 
         # Apply colors to symbols
         img = (
-            symbol_img[:, :, None] * colors
+            symbol_img[:, :, None].astype(np.float32) * colors.astype(np.float32) / 255.0
         ).astype(np.uint8)
                 
         symbol_vid.write(img)
@@ -107,13 +107,14 @@ def resize_vid(in_vid, name):
 def create_char_lut(char_set):
 
     font = cv2.FONT_HERSHEY_PLAIN
-    font_scale = 0.25*symbol_size
+    font_scale = 0.275*symbol_size
     thickness = 2
+    alpha = 0.4
 
-    lut = np.zeros(
+    lut = np.ones(
         (len(char_set), cell_height, cell_width),
         dtype=np.uint8
-    )
+    ) * int(alpha * 255)
 
     for i, char in enumerate(char_set):
 
@@ -130,7 +131,7 @@ def create_char_lut(char_set):
             (x, y),
             font,
             font_scale,
-            1,
+            255,
             thickness,
             cv2.LINE_8
         )
