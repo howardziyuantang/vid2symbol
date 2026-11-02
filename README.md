@@ -8,8 +8,8 @@ Examples:
 
 | Input | Output |
 | :---: | :---: |
-| <img src="https://github.com/user-attachments/assets/1a51cb09-d00c-4a2e-8f1f-1b5087acd65c" width="450"> | <img src="https://github.com/user-attachments/assets/aca1d448-786f-4035-8be6-e495b771eac0" width="450"> |
-| <img src="https://github.com/user-attachments/assets/42286241-6d84-4610-b476-27a7685c97a9" width="450"> | <img src="https://github.com/user-attachments/assets/958c6b13-3f28-4741-8cad-01e6d2198ff8" width="450"> |
+| <img src="https://github.com/user-attachments/assets/1a51cb09-d00c-4a2e-8f1f-1b5087acd65c" width="300"> | <img src="https://github.com/user-attachments/assets/aca1d448-786f-4035-8be6-e495b771eac0" width="300"> |
+| <img src="https://github.com/user-attachments/assets/42286241-6d84-4610-b476-27a7685c97a9" width="300"> | <img src="https://github.com/user-attachments/assets/958c6b13-3f28-4741-8cad-01e6d2198ff8" width="300"> |
 
 
 ## Quickstart
